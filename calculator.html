@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8f9fa;
+    }
+    .calculator-card {
+      width: 400px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+    .btn {
+      width: 70px;
+      margin: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: all 0.2s ease-in-out; /* smooth hover effect */
+    }
+    .btn:hover {
+      transform: scale(1.1); /* enlarge slightly */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* shadow on hover */
+    }
+    .btn-green { background-color: #28a745; color: white; }
+    .btn-blue { background-color: #007bff; color: white; }
+    .btn-yellow { background-color: #ffc107; color: black; }
+    .btn-red { background-color: #dc3545; color: white; }
+    .btn-violet { background-color: #35b8dc; color: white; }
+
+  </style>
+</head>
+<body>
+
+  <div class="card calculator-card text-center">
+    <h3 class="mb-3">Calculator</h3>
+    
+    <div class="mb-3 text-start">
+      <label class="form-label">Enter Number 1</label>
+      <input type="number" id="num1" class="form-control">
+    </div>
+    
+    <div class="mb-3 text-start">
+      <label class="form-label">Enter Number 2</label>
+      <input type="number" id="num2" class="form-control">
+    </div>
+    
+    <div class="mb-3 text-start">
+      <label class="form-label">Result</label>
+      <input type="text" id="result" class="form-control" readonly>
+    </div>
+    
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-green" onclick="calculate('+')">+</button>
+      <button class="btn btn-blue" onclick="calculate('-')">-</button>
+      <button class="btn btn-yellow" onclick="calculate('*')">*</button>
+      <button class="btn btn-red" onclick="calculate('/')">/</button>
+      <button class="btn btn-violet" onclick="reset()">Reset</button>
+
+    </div>
+  </div>
+
+  <script>
+    function calculate(operator) {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      let result;
+
+      if (isNaN(num1) || isNaN(num2)) {
+        result = "Please enter valid numbers";
+      } else {
+        switch(operator) {
+          case '+': result = num1 + num2; break;
+          case '-': result = num1 - num2; break;
+          case '*': result = num1 * num2; break;
+          case '/': result = num2 !== 0 ? (num1 / num2) : "Cannot divide by 0"; break;
+        }
+      }
+
+      document.getElementById("result").value = result;
+    }
+
+    function reset() {
+      document.getElementById("num1").value = '';
+      document.getElementById("num2").value = '';
+      document.getElementById("result").value = '';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array =[10,20,30,40,50];
+
+document.write("<b> Using For loop </b> <br>");
+        let sum =0;
+        for(var i=0; i<=array.length-1; i++){
+            document.write(array[i] + "<br>");
+            sum +=array[i];
+           }
+         document.write("Total sum is:" +sum +"<br>" );
+
+
+     document.write("<b> Using while loop </b> <br>");
+ 
+
+
+         var arr2 =[5,15,25,35,45];
+         let whilesum =0;
+            var j=0;
+            while(j<=arr2.length-1){
+                document.write(arr2[j] + "<br>");
+                whilesum +=arr2[j];
+                j++;
+            }
+            document.write("Total sum is:" +whilesum +"<br>" );
+
+
+            document.write("<b> Using dowhile loop </b> <br>");
+            var arr3 =[2,4,6,8,10];
+            let dowhilesum =0;
+               var k=0;
+               do{
+                   document.write(arr3[k] + "<br>");
+                   dowhilesum +=arr3[k];
+                   k++;
+               }while(k<=arr3.length-1);
+               document.write("Total sum is:" +dowhilesum);
+
+    </script>
+</body>
+</html>

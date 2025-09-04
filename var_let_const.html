@@ -10,6 +10,26 @@
         var a = 10;
         let b = 20;
         const c = 30;
+
+        fuction variablescope{
+
+            var a = 1;
+            let b = 2;
+            const c = 3;
+
+            if(true){
+               var a = 40; // function-scoped
+                let b = 50; // block-scoped
+                const c = 60; // block-scoped
+
+                console.log("block scope: ", a, b, c); // 40, 50, 60
+            }
+          console.log(" function scope: ", a, b, c); // 40, 20, 30
+        }
+
+        console.log("global scope: ", a, b, c); // 10, 20, 30
+
+        variablesope()
     </script>
 </body>
 </html>
