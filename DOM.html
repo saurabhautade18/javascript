@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulat</title>
+</head>
+<body>
+
+    <h2 id="heading"> This is my html content</h2>
+    <button onclick="changetext()" >Click me</button>
+
+    <p id="p">This is paragraph Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, ea libero vel veritatis facere beatae, odit voluptas accusantium maiores illum quos blanditiis porro placeat quidem, earum vero at veniam fuga?</p>
+    <button onclick="change()"> click me</button>
+
+
+    <h2> Counter</h2>
+    <h2 id="count">0</h2>
+    <button onclick="inc()">Increment</button> <button onclick="decre()">Decrement</button> <button onclick="rest()">Reset</button>
+   
+
+<script>
+    function inc() {
+        let count = document.getElementById("count");
+        count.innerText = Number(count.innerText) + 1;
+    }
+
+    function decre() {
+        let count = document.getElementById("count");
+        count.innerText = Number(count.innerText) - 1;
+    }
+
+    function rest() {
+        document.getElementById("count").innerText = 0;
+    }
+</script>
+
+
+    <script>
+        function changetext(){
+            document.getElementById("heading").innerHTML="This is changed by JS";
+        }
+
+
+        function change(){
+            document.getElementById("p").style.color="";
+            document.getElementById("p").style.backgroundColor="yellow";
+            document.getElementById("p").style.fontSize="30px";
+            document.getElementById("p").style.fontFamily="Arial";
+            document.getElementById("p").style.padding="10px";
+            document.getElementById("p").style.border="2px solid black";
+            document.getElementById("p").style.backgroundColor="red";
+
+        }
+
+
+    </script>
+</body>
+</html>
