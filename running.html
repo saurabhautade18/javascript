@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Rotating Text</title>
+<style>
+  :root {
+    --gradient-primary: linear-gradient(90deg, #6ee7ff, #a855f7, #ec4899);
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0f1226;
+  }
+
+  .hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+  }
+
+  .highlight {
+    display: inline-block;
+    min-width: 220px; /* keeps text area stable */
+    text-align: left;
+  }
+</style>
+</head>
+<body>
+
+  <h1 class="hero-title">
+    Transform Your Business with <span class="highlight" id="word"></span>
+  </h1>
+
+<script>
+const words = ["AI agents", "AI text generator", "AI image generator", "AI chat bot"];
+let i = 0;
+const el = document.getElementById("word");
+
+function changeWord() {
+  el.textContent = words[i];
+  i = (i + 1) % words.length;
+}
+
+changeWord(); // show first word immediately
+setInterval(changeWord, 2000); // change every 2 seconds
+</script>
+
+</body>
+</html>
